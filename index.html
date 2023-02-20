@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h1>Form Registation</h1>
+<form action="/action_page.php"></form>
+<label for="fname">First Name</label><br>
+<input type="text" id="fname" name="fname"><br>
+<label for="lname">Last Name </label><br>
+<input type="text" id="lname" name="lname"><br>
+<label for="bday">Birthday</label><br>
+<input type="date" id="bday" name="bday"><br>
+<label for="add">Alamat</label><br>
+<input type="text" id="Alamat" name="Alamat"><br>
+<label for="kel">kelurahan</label>
+<input type="text" id="kel" name="kel">
+<label for="kec">Kecamatan</label>
+<input type="text" id="kec" name="kec">
+<label for="prov">Provinsi</label>
+<input type="text" id="prov" name="prov"><br>
+
+<label for="no">nomor</label><br>
+<input type="text" id="no" name="no"><br>
+<br>
+</br>
+
+<button onclick="runPopup()" id="regist"> submit </button>
+
+<script>
+    function runPopup(){
+        var firstName=document.getElementById('fname').value;
+        var lasName = document.getElementById("lname").value;
+        var Birthday = document.getElementById('bday').value;
+        var Alamat = document.getElementById('Alamat').value;
+       var kelurahan=document.getElementById('kel').value;
+       var Kecamatan=document.getElementById('kec').value;  
+       var Provinsi=document.getElementById('prov').value;
+        var nomor=document.getElementById('no').value;
+        window.alert(
+         'first name :   '+ firstName +'\n' +
+         "last name  :   "+ lasName + '\n' +
+         'Birthday   :  '+ Birthday + '\n' +
+         'Alamat     : '+ Alamat + '\n' +
+        'kelurahan   : '+ kelurahan+'\n'+
+        'kecamatan   : '+ Kecamatan+ '\n'+
+        'provinsi   : '+Provinsi+'\n'+
+        'nomor        : '+nomor+'\n'
+
+        
+        
+        );
+        
+    };
+</script>
+
+</body>
+</html>
