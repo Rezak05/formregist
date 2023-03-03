@@ -1,62 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-<h1>Form Registation</h1>
-<form action="/action_page.php"></form>
-<label for="fname">First Name</label><br>
-<input type="text" id="fname" name="fname"><br>
-<label for="lname">Last Name </label><br>
-<input type="text" id="lname" name="lname"><br>
-<label for="bday">Birthday</label><br>
-<input type="date" id="bday" name="bday"><br>
-<label for="add">Alamat</label><br>
-<input type="text" id="Alamat" name="Alamat"><br>
-<label for="kel">kelurahan</label>
-<input type="text" id="kel" name="kel">
-<label for="kec">Kecamatan</label>
-<input type="text" id="kec" name="kec">
-<label for="prov">Provinsi</label>
-<input type="text" id="prov" name="prov"><br>
 
-<label for="no">nomor</label><br>
-<input type="text" id="no" name="no"><br>
-<br>
-</br>
+<body background="c:\Users\fadhi\Downloads\foto gedung.jpg">
+    <!-- <form> -->
+    <h1>Form Registation</h1>
+    <label for="fname">First Name</label><br>
+    <input type="text" id="fname" name="fname" required><br>
+    <label for="lname">Last Name </label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="bday">Birthday</label><br>
+    <input type="date" id="bday" name="bday"><br>
+    <label for="add">Alamat</label><br>
+    <input type="text" id="Alamat" name="Alamat"><br>
+    <label for="kel">kelurahan</label><br>
 
-<button onclick="runPopup()" id="regist"> submit </button>
+    <input type="text" id="kel" name="kel"><br>
+    <label for="kec">Kecamatan</label><br>
 
-<script>
-    function runPopup(){
-        var firstName=document.getElementById('fname').value;
-        var lasName = document.getElementById("lname").value;
-        var Birthday = document.getElementById('bday').value;
-        var Alamat = document.getElementById('Alamat').value;
-       var kelurahan=document.getElementById('kel').value;
-       var Kecamatan=document.getElementById('kec').value;  
-       var Provinsi=document.getElementById('prov').value;
-        var nomor=document.getElementById('no').value;
-        window.alert(
-         'first name :   '+ firstName +'\n' +
-         "last name  :   "+ lasName + '\n' +
-         'Birthday   :  '+ Birthday + '\n' +
-         'Alamat     : '+ Alamat + '\n' +
-        'kelurahan   : '+ kelurahan+'\n'+
-        'kecamatan   : '+ Kecamatan+ '\n'+
-        'provinsi   : '+Provinsi+'\n'+
-        'nomor        : '+nomor+'\n'
+    <input type="text" id="kec" name="kec"><br>
+    <label for="prov">Provinsi</label><br>
 
-        
-        
-        );
-        
-    };
-</script>
+    <input type="text" id="prov" name="prov"><br>
+    <button type="submit" onclick="displayData()" id="regist"> submit </button>
+    <br>
+    </br>
+    <!-- </form> -->
+
+
+
 
 </body>
+
+
+
+<div style="flex-direction: column;">
+    <div>
+        <label>First Name :</label><br>
+        <input id="firstName" /><br>
+
+    </div>
+    <div>
+        <label>Last Name :</label><br>
+        <input id="lastName" /><br>
+    </div>
+    <div>
+        <label>Birthday :</label><br>
+        <input type="text" id="birthDay" /><br>
+        <label>Alamat :</label><br>
+        <input type="text" id="alamat" /><br>
+        <label>Kelurahan</label><br>
+        <input type="text" id="kelurahan" /><br>
+        <label>Kecamatan</label><br>
+        <input type="text" id="kecamatan" /><br>
+        <label>Provinsi</label><br>
+        <input type="text" id="provinsi" />
+
+
+    </div>
+</div>
+
+</body>
+
+
+<script>
+    function display(fnameVar,lnamevar,bdayVar,alamatVar,kelVar,kecVar,provVar) {
+        // var firstName = document.getElementById('fname').value;
+        // var lasName = document.getElementById("lname").value;
+        // var Birthday = document.getElementById('bday').value;
+        // var Alamat = document.getElementById('Alamat').value;
+        // var kelurahan = document.getElementById('kel').value;
+        // var Kecamatan = document.getElementById('kec').value;
+        // var Provinsi = document.getElementById('prov').value;
+
+
+        alert(
+            'first name :   ' + fnameVar + '\n'+
+            "last name  :   " + lnamevar + '\n' +
+            'Birthday   :  ' + bdayVar + '\n' +
+            'Alamat     : ' + alamatVar + '\n' +
+            'kelurahan   : ' + kelVar + '\n' +
+            'kecamatan   : ' + kecVar + '\n' +
+            'provinsi   : ' + provVar + '\n'
+        )
+
+    }
+
+
+
+
+
+    function displayData() {
+
+        var fnameVar = document.getElementById("fname").value;
+        var lnamevar = document.getElementById("lname").value;
+        var bdayVar = document.getElementById('bday').value;
+        var alamatVar = document.getElementById('Alamat').value;
+        var kelVar = document.getElementById('kel').value;
+        var kecVar = document.getElementById('kec').value;
+        var provVar = document.getElementById('prov').value;
+
+
+        document.getElementById("firstName").value = fnameVar;
+        document.getElementById("lastName").value = lnamevar;
+        document.getElementById("birthDay").value = bdayVar;
+        document.getElementById("alamat").value = alamatVar;
+        document.getElementById('kelurahan').value = kelVar;
+        document.getElementById('kecamatan').value = kecVar;
+        document.getElementById('provinsi').value = provVar;
+
+        // set timout
+
+        setTimeout(() => {
+            this.display(fnameVar,lnamevar,bdayVar,alamatVar,kelVar,kecVar,provVar)
+        }, 1000)
+
+
+
+    }
+</script>
+
 </html>
